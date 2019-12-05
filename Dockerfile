@@ -97,7 +97,8 @@ RUN \
         ; \
     fi
 
-
+## The core of how gosu works is stolen directly from how Docker/libcontainer itself starts an application inside a container (and in fact, is using the /etc/passwd processing code directly from libcontainer's codebase).
+## Additionally, due to the fact that gosu is using Docker's own code for processing these user:group, it has exact 1:1 parity with Docker's own --user flag.
 RUN \
     echo "Installing tiny and gosu" \
     ; \
